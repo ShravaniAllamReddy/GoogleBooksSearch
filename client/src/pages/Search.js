@@ -53,7 +53,7 @@ class SearchBooks extends Component {
         return (
            <div>
               <Jumbotron>
-                <h2>(React) Google Books Search</h2>
+                <h2 >(React) Google Books Search</h2>
                 <p>Search for and Save Books of Interest</p>
               </Jumbotron>
                <Container>

@@ -9,8 +9,8 @@ const bookSchema = new Schema({
     },
     authors:
     {
-        type: Array,
-        required: true
+       type: Array,
+       required: true
     },
     description:
     {
@@ -24,8 +24,7 @@ const bookSchema = new Schema({
     },
     image:
     {
-        data: Buffer,
-        contentType: String
+        type:String
     }
 
 });

@@ -19,7 +19,7 @@ function SavedResult(props) {
                                        
                                         <Col size="10">
                                             <Row>
-                                                <h3>{book.title} by {book.authors}</h3>
+                                                <h3>{book.title}</h3>
                                             </Row>
                                             <Row>
                                                 <p>{book.description}</p>
