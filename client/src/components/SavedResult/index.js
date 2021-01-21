@@ -1,17 +1,17 @@
 import React from "react";
 import {Row, Col} from "../Grid"
-// import { List, ListItem } from "../List";
 
-function SearchResult(props) {
+
+function SavedResult(props) {
     console.log(props)
-    return (props.googlebooks.length > 0) ?  
-            (   <div className="card">
-                     <div className="card-body">
-                        {props.googlebooks.map(book => {
+    return  (    
+               <div className="card">
+                       <div className="card-body">
+                        {props.savedbooks.map(book => {
                             return (
                             <div className="card">
                                 <div className="card-body">
-                                     <Row key={book.id}>
+                                    <Row key={book._id}>
                                        
                                         <Col size="2">
                                             <img src={book.image} alt={book.title} />
@@ -19,7 +19,7 @@ function SearchResult(props) {
                                        
                                         <Col size="10">
                                             <Row>
-                                                <h3>{book.title} by {book.author}</h3>
+                                                <h3>{book.title} by {book.authors}</h3>
                                             </Row>
                                             <Row>
                                                 <p>{book.description}</p>
@@ -35,21 +35,18 @@ function SearchResult(props) {
                                             </button>
                                         </a>
                                           
-                                        <button className="btn btn-info ml-2" id={book.id} onClick={(event) => props.handleSaveButton(event)}>
-                                            Save 
+                                        <button className="btn btn-info ml-2" id={book._id} onClick={() => props.handleDeleteButton(book._id)}>
+                                            Delete
                                         </button>
                                         
                                     </Row>
-                               </div>
-                            </div>
+                                </div>
+                              </div>
                             );
                         })}
-                   </div>
-               </div>
-        ) : (
-       
-            <h3>No Results to Display</h3>
-        
-     ) 
+                        </div>
+                   </div> 
+   )
 }
-export default SearchResult;
+
+export default SavedResult;

@@ -42,6 +42,7 @@ class SearchBooks extends Component {
     handleSaveButton = event => {
               event.preventDefault();
               let bookData = this.state.googlebooks.filter(book => book.id === event.target.id)
+              // bookData = bookData[0];
               console.log(bookData);
               API.saveBook(bookData)
                   .then(this.setState({ message: alert("Your book is saved") }))
