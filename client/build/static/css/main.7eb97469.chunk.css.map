@@ -1,0 +1,1 @@
+{"version":3,"sources":["style.css"],"names":[],"mappings":"AAAA,WACI,sDAAA,CACA,uBAA2B,CAC3B,qBAAsB,CACtB,2BAA4B,CAC5B,iBACJ","file":"main.7eb97469.chunk.css","sourcesContent":[".jumbotron{\r\n    background-image: url(\"./books.jpg\");\r\n    background-position: center;\r\n    background-size: cover;\r\n    background-repeat: no-repeat;\r\n    text-align: center\r\n}"]}
