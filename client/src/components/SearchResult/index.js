@@ -29,9 +29,14 @@ function SearchResult(props) {
                                     <Row> 
                                         <a href={book.link} target="_blank">
                                             <button className="btn btn-info">
-                                                View Book
+                                                View 
                                             </button>
                                         </a>
+                                          
+                                        <button className="btn btn-info ml-2" id={book.id} onClick={(event) => props.handleSaveButton(event)}>
+                                            Save 
+                                        </button>
+                                        
                                     </Row>
                                 </ListItem>
                             );

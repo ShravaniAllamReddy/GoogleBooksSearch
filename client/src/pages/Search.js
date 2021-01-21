@@ -3,6 +3,7 @@ import API from "../utils/API";
 import { Container, Row, Col } from "../components/Grid";
 import SearchForm from "../components/SearchForm";
 import SearchResult from "../components/SearchResult"
+import Jumbotron from "../components/Jumbotron";
 
 class SearchBooks extends Component {
     //create state
@@ -37,11 +38,23 @@ class SearchBooks extends Component {
                     this.setState({ googlebooks: books })
                 })
             }
-            
+          
+    handleSaveButton = event => {
+              event.preventDefault();
+              let bookData = this.state.googlebooks.filter(book => book.id === event.target.id)
+              console.log(bookData);
+              API.saveBook(bookData)
+                  .then(this.setState({ message: alert("Your book is saved") }))
+                  .catch(err => console.log(err))
+          }
 
     render() {
         return (
            <div>
+              <Jumbotron>
+                <h2>(React) Google Books Search</h2>
+                <p>Search for and Save Books of Interest</p>
+              </Jumbotron>
                <Container>
                     <Row>
                         <Col size="12">
@@ -56,7 +69,10 @@ class SearchBooks extends Component {
                 <br></br>
                 <Container>
       
-                    <SearchResult googlebooks={this.state.googlebooks} />
+                    <SearchResult 
+                        googlebooks={this.state.googlebooks} 
+                        handleSaveButton= {this.handleSaveButton}
+                    />
                    
                 </Container>
            </div>
